@@ -9,4 +9,7 @@
 
 BEGIN;
 
+SELECT pg_advisory_lock(12345);
+UPDATE accounts SET balance = balance + 50 WHERE id = 1;
+
 -- Увага: не виконуйте COMMIT, щоб транзакції залишались заблокованими
